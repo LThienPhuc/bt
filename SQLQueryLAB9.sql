@@ -10,7 +10,9 @@ WHERE MASV=@MSV)
 RETURN @TB
 END
 GO
-SELECT DBO.DIEMTB ('01')GO
+SELECT DBO.DIEMTB ('01')
+
+GO
 
 --Cau 2 Viết hàm bằng 2 cách (table – value fuction và multistatement value function) tính điểm trung
 --bình của cả lớp, thông tin gồm MaSV, Hoten, ĐiemTB, sử dụng hàm diemtb ở câu 1
@@ -36,7 +38,9 @@ GROUP BY S.MASV, HOTEN
 RETURN
 END
 GO
-SELECT*FROM TRBINHLOP1('A') --Cau 3 Viết một thủ tục kiểm tra một sinh viên đã thi bao nhiêu môn, tham số là MaSV, (VD sinh viên
+SELECT*FROM TRBINHLOP1('A')
+
+ --Cau 3 Viết một thủ tục kiểm tra một sinh viên đã thi bao nhiêu môn, tham số là MaSV, (VD sinh viên
 --có MaSV=01 thi 3 môn) kết quả trả về chuỗi thông báo “Sinh viên 01 thi 3 môn” hoặc “Sinh
 --viên 01 không thi môn nào”
 CREATE PROC KTRA @MSV CHAR(5)
